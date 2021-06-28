@@ -1,38 +1,100 @@
 .App {
   text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  padding: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#search {
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-list-wrapper {
+  border: 1px solid #cccccc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-list-view {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 1px solid #cccccc;
 }
 
-.App-link {
-  color: #61dafb;
+.user-list-view:hover {
+  background-color: #C8F4F9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+span.user-detail {
+  padding: 12px;
+  flex-basis: 20%;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.loading {
+  padding: 12px;
+  margin: auto;
+  height: auto;
+  display: block;
+}
+
+.empty-result {
+  padding: 12px;
+  margin: auto;
+  height: auto;
+  text-align: left;
+}
+
+@media only screen and (max-width: 1023px) {
+  .user-list-header {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .user-list-view {
+    display: flex;
+    border-bottom: 1px solid #cccccc;
+    flex-direction: column;
+    text-align: left;
   }
+  
+  span.user-detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* For desktop: */
+  .header-container {
+    text-align: left;
+  }
+
+  .user-list-header {
+    display: flex;
+    background-color: #1AC8DB;
+    color: #fff;
+  }
+  
+  .header-wrapper {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+  }
+  
+  .header-key {
+    padding: 12px;
+    flex-basis: 20%;
+    align-items: center;
+    overflow: hidden;
+    font-weight: 700;
+  }
+  
+  .header {
+    background-color: #1AC8DB;
+    color: #fff;
+  }
+
 }
