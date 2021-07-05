@@ -1,8 +1,18 @@
 import React, { useContext, useEffect} from 'react';
 import { User } from './User';
-import { GlobalContext } from '../context/GlobalState';
+import { GlobalContext }  from '../context/GlobalState';
+import ComponentInterface from '../interface/componentInterface';
 
 import { ImSpinner3 } from 'react-icons/im';
+
+interface UserListInterface {
+  userList: Array<ComponentInterface>,
+  searchTerm: string,
+  searchResult: Array<ComponentInterface>,
+  isLoading: boolean,
+  isError: boolean,
+
+}
 
 export const UserList = () => {
   const { userList, searchTerm, searchResult, getUserList, isLoading, isError } = useContext(GlobalContext);
@@ -18,7 +28,7 @@ export const UserList = () => {
       </div>)
   }
 
-  const renderRows = (lists) => {
+  const renderRows = (lists: Array<ComponentInterface>) => {
     return lists.map(list => (<User key={list.id} user={list} />))
   }
   

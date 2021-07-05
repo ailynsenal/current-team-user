@@ -36,7 +36,7 @@ export const GlobalProvider = ({ children }) => {
       })
   }
 
-  const getSearchResult = (result) => {
+  const getSearchResult: any = (result) => {
     dispatch({
       type: 'GET_SEARCH_RESULT',
       payload: result
